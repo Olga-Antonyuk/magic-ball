@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Додаємо стилі
     const style = document.createElement('style');
     style.textContent = `
         * {
@@ -120,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 	
-    // Створюємо структуру сторінки
     const container = document.createElement('div');
     container.className = 'container';
 
@@ -130,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const magicBall = document.createElement('div');
     magicBall.className = 'magic-ball';
 
-    // Створюємо контейнер для картинки та відповіді
     const ballContainer = document.createElement('div');
     ballContainer.style.position = 'relative';
     ballContainer.style.display = 'inline-block';
@@ -159,7 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
     askBtn.id = 'askBtn';
     askBtn.textContent = 'Задати питання';
 
-    // Збираємо структуру
     answerContainer.appendChild(answer);
     ballContainer.appendChild(ballImage);
     ballContainer.appendChild(answerContainer);
@@ -201,12 +197,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
 
+
     function askQuestion() {
         const question = questionInput.value.trim();
         
         if (!validateQuestion(question)) return;
         
-        // Анімація тряски
+
         ballContainer.classList.add('shake');
         askBtn.disabled = true;
     
@@ -218,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     }
 
-    // Додаємо обробники подій
+
     askBtn.addEventListener('click', askQuestion);
     
 });
